@@ -10,7 +10,7 @@ $conexao = Funcoes::conexao();
 
 $Mesa = new Mesa($conexao);
 
-if($Mesa->fazReclamacao($dados["nome"],$dados["telefone"],$dados["email"],$dados["detalhes"])){
+if($Mesa->fazReclamacao($dados["nome"],$dados["telefone"],$dados["email"],$dados["detalhes"],$dados["restaurante"])){
     $return['payload'] = "";
     $return['ok'] = true;
     echo json_encode($return);
