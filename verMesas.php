@@ -11,7 +11,11 @@ $dados = $_GET;
 $quando = date("d-m-Y h:i");
 
 $mesas = $Mesa->verMesas($dados["usuario"]);
+$restaurante = $Mesa->restaurante($dados["usuario"]);
+
+
 
 $return['payload'] = ($mesas);
+$return['restaurante'] = ($restaurante);
 $return['ok'] = true;
 echo json_encode($return);

@@ -11,6 +11,11 @@ class Mesa{
 
     }
 
+    public function restaurante($restaurante){
+        $query = $this->conexao->prepare("SELECT * FROM usuario WHERE identificador = '$restaurante'");
+        $query->execute();
+        return $query->fetch(\PDO::FETCH_ASSOC);
+    }
     public function ver($numero,$restaurante){
         $query = $this->conexao->prepare("SELECT * FROM mesa WHERE usuario = '$restaurante' AND numeromesa = '$numero'");
         $query->execute();
