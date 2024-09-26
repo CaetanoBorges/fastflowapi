@@ -140,4 +140,20 @@ class Mesa{
         $mesas=$query->fetchAll(\PDO::FETCH_ASSOC);        
         return $mesas;
     }
+    
+    public function slide($usuario){
+
+        $query = $this->conexao->prepare("SELECT slide FROM usuario WHERE identificador = '$usuario'");
+        $query->execute();
+        $res=$query->fetch(\PDO::FETCH_ASSOC);        
+        return $res["slide"];
+    }
+    
+    public function pub($usuario){
+
+        $query = $this->conexao->prepare("SELECT pub FROM usuario WHERE identificador = '$usuario'");
+        $query->execute();
+        $res=$query->fetch(\PDO::FETCH_ASSOC);        
+        return $res["pub"];
+    }
 }

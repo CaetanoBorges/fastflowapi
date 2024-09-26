@@ -1,0 +1,1 @@
+ALTER TABLE `usuario` ADD `slide` TEXT NULL AFTER `img`, ADD `pub` VARCHAR(500) NULL AFTER `slide`;
