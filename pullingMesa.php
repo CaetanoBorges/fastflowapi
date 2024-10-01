@@ -11,5 +11,6 @@ $Mesa = new Mesa($conexao);
 
 
 $return['payload'] = $Mesa->ver($dados['mesa'], $dados['restaurante']);
+$return['restaurante'] = $Mesa->restaurante($dados["restaurante"])["nome"];
 $return['ok'] = true;
-echo json_encode($return);
+echo json_encode($return); 
