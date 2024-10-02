@@ -156,4 +156,11 @@ class Mesa{
         $res=$query->fetch(\PDO::FETCH_ASSOC);        
         return $res["pub"];
     }
+    public function logo($usuario){
+
+        $query = $this->conexao->prepare("SELECT img FROM usuario WHERE identificador = '$usuario'");
+        $query->execute();
+        $res=$query->fetch(\PDO::FETCH_ASSOC);        
+        return $res["img"];
+    }
 }
