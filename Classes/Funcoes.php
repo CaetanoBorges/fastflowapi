@@ -9,7 +9,7 @@ class Funcoes{
             return self::$conexao;
         }
 
-        self::$conexao = new \PDO("mysql:host=localhost;dbname=fastflow", "root", "");
+        self::$conexao = new \PDO("mysql:host=localhost;dbname=fastflow;charset=utf8", "root", "");
         return self::$conexao;
     }
     static function generateRandomString($length = 10) {
